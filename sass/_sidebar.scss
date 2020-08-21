@@ -5,6 +5,13 @@
 
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 1 / 2;
+    grid-template-columns: 1 / -1;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .nav-btn {
@@ -20,7 +27,7 @@
   &::after {
     content: "";
     background-color: #fff;
-    height: 3px;
+    height: 3zpx;
     width: 4.5rem;
     display: block;
   }
@@ -31,5 +38,18 @@
 
   &::after {
     transform: translateY(1.3rem);
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 3rem;
+
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+
+    &::after {
+      transform: translateY(1rem);
+    }
   }
 }
